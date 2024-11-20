@@ -28,6 +28,20 @@ const Operations = () => {
   return (
     <div id="operations">
       <div>
+        {forms.map((val, index) => (
+          <Payment
+            labelHeading={val}
+            setAmount={setAmount}
+            amount={amount}
+            handleDeposit={handleDeposit}
+            handleWithdraw={handleWithdraw}
+            handleloan={handleloan}
+            handlePayLoan={handlePayLoan}
+            key={index}
+          />
+        ))}
+      </div>
+      {/* <div>
         <label>Deposit Money : </label>
         <input
           placeholder="Type here..."
@@ -78,15 +92,7 @@ const Operations = () => {
           }}
         />
         <button onClick={() => handlePayLoan(amount)}>Pay</button>
-      </div>
-      <div>
-        {forms.map((val) => {
-          <div>
-            {console.log(val)}
-            <Payment labelHeading={val} />
-          </div>;
-        })}
-      </div>
+      </div> */}
     </div>
   );
 };

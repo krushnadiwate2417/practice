@@ -1,11 +1,19 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Operations from "./Operations";
 
 const WelcomePage = () => {
+  const [hiding, setHiding] = useState("hide");
   const uName = useSelector((state) => state.user.name);
   const uId = useSelector((state) => state.user.id);
   const balance = useSelector((state) => state.account.balance);
   const loan = useSelector((state) => state.account.loan);
+
+  useEffect(() => {
+    if (loan > 0) {
+      setHiding("");
+    }
+  }, [loan]);
+
   return (
     <div className="hide" id="welcome">
       <div className="welcomeHeader">
@@ -15,7 +23,7 @@ const WelcomePage = () => {
         </div>
         <div>
           <h1>Account Balance : {balance} </h1>
-          <h3 id="loan" className="hide">
+          <h3 id="loan" className={hiding}>
             YOu have loan of {loan}
           </h3>
         </div>
