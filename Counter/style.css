@@ -1,0 +1,103 @@
+body {
+  background-color: rgba(0, 0, 0, 0.795);
+}
+
+.grid-c {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 70px;
+}
+.addVal {
+  grid-column: span 3;
+  justify-self: center;
+}
+
+.clear {
+  grid-column: span 3;
+  justify-self: center;
+}
+
+.btn {
+  height: 70px;
+  width: fit-content;
+  justify-self: center;
+  padding-right: 40px;
+  padding-left: 40px;
+  border: none;
+  border-radius: 15px;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: rgb(211, 205, 205);
+}
+
+.decbtn:active {
+  background-color: rgb(211, 205, 205);
+}
+
+.incbtn:active {
+  background-color: rgb(211, 205, 205);
+}
+
+.decbtn {
+  height: 70px;
+  width: fit-content;
+  justify-self: right;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: none;
+  border-radius: 15px;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.incbtn {
+  height: 70px;
+  width: fit-content;
+  justify-self: left;
+  padding-right: 40px;
+  padding-left: 40px;
+  border: none;
+  border-radius: 15px;
+  font-size: larger;
+  cursor: pointer;
+}
+
+input {
+  height: 60px;
+  width: 200px;
+  margin-right: 10px;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  color: black;
+  font-size: xx-large;
+}
+
+input::placeholder {
+  color: black;
+  font-size: large;
+}
+
+input:focus {
+  outline: none;
+}
+
+.val {
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
+}

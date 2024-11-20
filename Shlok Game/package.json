@@ -1,0 +1,23 @@
+{
+  "name": "shlok-game",
+  "version": "1.0.0",
+  "description": "Game",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Krushna D",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-raw": "^2.13.0",
+    "parcel": "^2.13.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  }
+}

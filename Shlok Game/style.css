@@ -1,0 +1,145 @@
+.flex-c {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: none;
+}
+
+video {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 90vh;
+}
+
+.gameInput {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-size: 120px;
+}
+
+.alpha {
+  width: 200px;
+  height: 200px;
+  font-size: 120px;
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.grid-c {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.correct {
+  display: flex;
+  gap: 100px;
+  font-size: large;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  width: 200px;
+  height: 80px;
+  font-size: xx-large;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: 5px;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: 0.2s ease-in-out;
+}
+
+.loginSubmit {
+  height: 100px;
+  width: 400px;
+  margin: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  background-color: gray;
+  color: white;
+}
+button:disabled:hover {
+  cursor: not-allowed;
+  background-color: gray;
+  color: white;
+  border: none;
+}
+
+.login-flex {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.login-grid > label {
+  font-size: xx-large;
+}
+
+.login-grid > button {
+  justify-self: center;
+}
+
+.loginInput {
+  margin: none;
+  height: 100px;
+  width: 400px;
+  font-size: x-large;
+  text-align: center;
+  letter-spacing: 2px;
+  border-radius: 50px;
+}
+
+.result-flex {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-grid {
+  border: 3px solid black;
+  border-radius: 25px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

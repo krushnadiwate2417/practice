@@ -1,0 +1,51 @@
+* {
+  margin: none;
+  padding: none;
+}
+
+.grid-c {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.alpha {
+  justify-self: center;
+  text-align: center;
+}
+
+.box {
+  height: 250px;
+  width: 250px;
+  border: 5px solid black;
+  border-radius: 25px;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: large;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: white;
+  color: black;
+  transition: 0.1s ease-in-out;
+}
+
+.num {
+  justify-self: center;
+  text-align: center;
+}
