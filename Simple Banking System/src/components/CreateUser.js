@@ -1,13 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import UserContext from "./UserContext";
 import Operations from "./Operations";
 
 const CreateUser = () => {
-  const { user, setUserName, userId, setUserId } = useContext(UserContext);
+  const [hidingCred, setHidingCred] = useState("");
+  const [hidingWel, setHidingWel] = useState("hide");
+  const [hidingLoan, setHidingLoan] = useState("hide");
+  const { user, setUserName, userId, setUserId, balance, loan } =
+    useContext(UserContext);
+
+  useEffect(() => {
+    if (loan > 0) {
+      setHidingLoan("");
+    }
+  }, [loan]);
 
   return (
     <div>
-      <div id="Credentials">
+      <div id="Credentials" className={hidingCred}>
         <label>Username</label>
         <input
           placeholder="Type here ..."
@@ -29,20 +39,22 @@ const CreateUser = () => {
         />
         <button
           onClick={() => {
-            const Credentials = document.getElementById("Credentials");
-            Credentials.classList.add("hide");
-            const Welcome = document.getElementById("Welcome");
-            Welcome.classList.remove("hide");
+            setHidingCred("hide");
+            setHidingWel("");
           }}
         >
           Create
         </button>
       </div>
-      <div id="Welcome" className="hide">
+      <div id="Welcome" className={hidingWel}>
         <div className="info">
           <div>
             <h1>Welcome {user}</h1>
             <h2>UserID : {userId}</h2>
+          </div>
+          <div className="balanceDiv">
+            <h1>Account Balance : {balance}</h1>
+            <h2 className={hidingLoan}>You Have Loan Of : {loan}</h2>
           </div>
         </div>
         <Operations />

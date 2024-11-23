@@ -1,3 +1,13 @@
 .hide {
   display: none;
 }
+
+.info {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.balanceDiv {
+  margin-right: 50px;
+}

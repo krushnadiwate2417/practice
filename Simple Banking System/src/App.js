@@ -7,6 +7,8 @@ import CreateUser from "./components/CreateUser";
 const App = () => {
   const [userName, setUserName] = useState("");
   const [userId, setUserId] = useState("");
+  const [balance, setBalance] = useState(0);
+  const [loan, setLoan] = useState(0);
 
   return (
     <UserContext.Provider
@@ -15,6 +17,10 @@ const App = () => {
         setUserName,
         userId: userId,
         setUserId,
+        balance: balance,
+        setBalance,
+        loan: loan,
+        setLoan,
       }}
     >
       <div>

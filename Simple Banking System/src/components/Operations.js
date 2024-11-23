@@ -1,17 +1,20 @@
-import { useReducer, useState } from "react";
+import { useReducer, useState, useContext } from "react";
+import UserContext from "./UserContext";
 
 const Operations = () => {
-  const [editBalance, setEditBalance] = useState(0);
-  const [loan, setLoan] = useState(0);
+  // const [editBalance, setEditBalance] = useState(0);
+  // const [loan, setLoan] = useState(0);
 
+  const { setBalance, setLoan, balance, loan } = useContext(UserContext);
+  const [amount, setAmount] = useState(0);
   let initialState = 0;
 
   const reducer = (state, action) => {
     if (action.type === "Deposit") {
-      return state + Number(editBalance);
+      return state + Number(balance);
     }
     if (action.type === "Withdraw") {
-      return state - Number(editBalance);
+      return state - Number(balance);
     }
     if (action.type === "Loan") {
       return state + Number(loan);
@@ -23,21 +26,22 @@ const Operations = () => {
   console.log(state);
   return (
     <div>
-      <h1>Balance : {state}</h1>
+      {/* <h1>Balance : {state}</h1>
       <h3 className="hide" id="loan">
         You have Loan of {loan}
-      </h3>
+      </h3> */}
 
       <div>
         <button>Deposit Money</button>
         <input
           placeholder="ENter Amount"
           onChange={(e) => {
-            setEditBalance(e.target.value);
+            setAmount(e.target.value);
           }}
         />
         <button
           onClick={() => {
+            setBalance(amount);
             dispatch({ type: "Deposit" });
           }}
         >
@@ -50,11 +54,12 @@ const Operations = () => {
         <input
           placeholder="ENter Amount"
           onChange={(e) => {
-            setEditBalance(e.target.value);
+            setAmount(e.target.value);
           }}
         />
         <button
           onClick={() => {
+            setBalance(amount);
             dispatch({ type: "Withdraw" });
           }}
         >
@@ -67,15 +72,14 @@ const Operations = () => {
         <input
           placeholder="ENter Amount"
           onChange={(e) => {
-            setLoan(e.target.value);
+            setAmount(e.target.value);
           }}
         />
         <input placeholder="Enter Purpose" />
         <button
           onClick={() => {
+            setBalance(amount);
             dispatch({ type: "Loan" });
-            const loan = document.getElementById("loan");
-            loan.classList.remove("hide");
           }}
         >
           Apply
@@ -87,12 +91,12 @@ const Operations = () => {
         <input
           placeholder="ENter Amount"
           onChange={(e) => {
-            setEditBalance(e.target.value);
+            setBalance(e.target.value);
           }}
         />
         <button
           onClick={() => {
-            setLoan(loan - editBalance);
+            setLoan(loan - balance);
           }}
         >
           Pay Loan
